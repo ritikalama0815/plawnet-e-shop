@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "FdHvJSYodVU=",
+  "success": true,
+  "projectFilePath": "/Users/ritika0815/Desktop/e-shop/server/server.csproj",
+  "expectedPackageFiles": [
+    "/Users/ritika0815/.nuget/packages/microsoft.aspnetcore.openapi/10.0.11/microsoft.aspnetcore.openapi.10.0.11.nupkg.sha512",
+    "/Users/ritika0815/.nuget/packages/microsoft.openapi/2.7.5/microsoft.openapi.2.7.5.nupkg.sha512"
+  ],
+  "logs": []
+}
