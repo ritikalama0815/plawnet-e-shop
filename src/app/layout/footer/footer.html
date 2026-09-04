@@ -1,3 +1,86 @@
-<footer> 
-    
+<footer class="site-footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-12 col-md-6 col-lg-4">
+        <img src="assets/logo-white.png" alt="Plawnet" class="footer-logo" />
+        <p class="footer-tagline mt-3 mb-2">Reduce. Reuse. Recycle.</p>
+        <p class="footer-contact mb-1">
+          <mat-icon>mail</mat-icon>
+          <a href="mailto:hello@plawnet.com">hello@plawnet.com</a>
+        </p>
+        <p class="footer-contact mb-0">
+          <mat-icon>call</mat-icon>
+          <a href="tel:+18005550192">1-123-456-7890</a>
+        </p>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="footer-heading">Shop</h2>
+        <ul class="footer-links">
+          <li><a href="/shop">All products</a></li>
+          <!-- <li><a href="/new-arrivals">New arrivals</a></li>
+          <li><a href="/best-sellers">Best sellers</a></li> -->
+          <li><a href="/sustainability">Sustainability</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="footer-heading">Help</h2>
+        <ul class="footer-links">
+          <li><a href="/faq">FAQs</a></li>
+          <li><a href="/shipping">Shipping</a></li>
+          <li><a href="/returns">Returns &amp; refunds</a></li>
+          <li><a href="/track-order">Track your order</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="footer-heading">Legal</h2>
+        <ul class="footer-links">
+          <li><a href="/terms-of-service">Terms of Service</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/cookie-policy">Cookie Policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-6 col-lg-2">
+        <h2 class="footer-heading">Company</h2>
+        <ul class="footer-links">
+          <li><a href="/about">About Plawnet</a></li>
+          <li><a href="/careers">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row g-4 mt-2 pt-4 footer-newsletter">
+      <div class="col-12 col-lg-6">
+        <p class="footer-blurb mb-3">Get restocks, eco tips, and exclusive offers. Unsubscribe anytime.</p>
+        <form class="d-flex gap-2 flex-wrap" (submit)="$event.preventDefault()">
+          <label class="visually-hidden" for="footer-email">Email address</label>
+          <input
+            id="footer-email"
+            type="email"
+            class="form-control footer-email"
+            placeholder="you@email.com"
+            autocomplete="email"
+          />
+          <button type="submit" class="btn footer-subscribe">Subscribe</button>
+        </form>
+      </div>
+      <div class="col-12 col-lg-6 d-flex flex-column align-items-lg-end justify-content-end">
+        <p class="footer-heading mb-2">Follow us</p>
+        <div class="footer-social d-flex gap-3">
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer">Pinterest</a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container py-3 d-flex flex-column flex-md-row gap-3 align-items-md-center justify-content-between">
+      <p class="mb-0">© {{ year }} Plawnet. All rights reserved.</p>
+    </div>
+  </div>
 </footer>

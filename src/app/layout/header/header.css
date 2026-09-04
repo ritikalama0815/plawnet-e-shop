@@ -2,6 +2,12 @@
   height: 15rem;
 }
 
+.app-logo:hover{
+  transform: scale(1.1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
 .search-icon{
   margin-left: -35px!important;
   z-index: 10;

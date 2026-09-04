@@ -1,0 +1,100 @@
+.site-footer {
+  background: #184c29;
+  color: #e7efe8;
+  margin-top: 3rem;
+}
+
+.footer-logo {
+  display: block;
+  height: 15rem;
+  margin-left: -70px;
+  object-fit: contain;
+}
+
+.footer-tagline {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: #9fd4a8;
+}
+
+.footer-blurb,
+.footer-contact {
+  color: #c5d4c8;
+  font-size: 0.95rem;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-contact mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+.footer-contact a,
+.footer-links a,
+.footer-social a {
+  color: #e7efe8;
+  text-decoration: none;
+}
+
+.footer-contact a:hover,
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #9fd4a8;
+  text-decoration: underline;
+}
+
+.footer-heading {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  color: #9fd4a8;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li + li {
+  margin-top: 0.45rem;
+}
+
+.footer-newsletter {
+  border-top: 1px solid rgba(159, 212, 168, 0.2);
+}
+
+.footer-email {
+  max-width: 280px;
+}
+
+.footer-subscribe {
+  background: #2e8b57;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.footer-subscribe:hover {
+  background: #247548;
+  color: #fff;
+}
+
+.footer-bottom {
+  background: #0e1a12;
+  color: #a8b8ac;
+  font-size: 0.85rem;
+}
+
+.footer-payments {
+  letter-spacing: 0.02em;
+}
