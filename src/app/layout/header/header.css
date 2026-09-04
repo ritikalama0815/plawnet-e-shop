@@ -1,14 +1,110 @@
-.app-logo {
-  height: 15rem;
+:host {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+  display: block;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e6ece7;
 }
 
-.app-logo:hover{
-  transform: scale(1.1);
+.site-header {
+  padding: 0.75rem 1.5rem 0.9rem;
+}
+
+.app-logo {
+  height: 72px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+}
+
+.app-logo:hover {
+  transform: scale(1.05);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
-.search-icon{
-  margin-left: -35px!important;
+.search-icon {
+  margin-left: -35px !important;
   z-index: 10;
+}
+
+.icon-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  color: #21313c;
+  text-decoration: none;
+  margin-left: 0.25rem;
+}
+
+.icon-btn .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #2e8b57;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.app-navbar {
+  border-top: 1px solid #e6ece7;
+  padding-top: 0.6rem;
+  overflow: visible;
+}
+
+.app-navbar .nav {
+  overflow: visible;
+}
+
+.app-navbar .nav-link {
+  color: #21313c;
+  font-weight: 500;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.app-navbar .nav-link:hover,
+.app-navbar .nav-link.active {
+  color: #2e8b57;
+}
+
+.categories-item {
+  position: relative;
+}
+
+.categories-item .dropdown-menu {
+  display: block;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 240px;
+  z-index: 3000;
+  padding: 0.45rem 0;
+  border: 1px solid #e6ece7;
+  border-radius: 12px;
+  box-shadow: 0 16px 40px rgba(20, 38, 26, 0.12);
+  background: #fff;
+}
+
+.app-navbar .dropdown-item {
+  padding: 0.55rem 1rem;
+}
+
+.app-navbar .dropdown-item:hover {
+  background: #eef7f0;
+  color: #2e8b57;
 }

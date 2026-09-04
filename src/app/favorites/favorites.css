@@ -1,0 +1,37 @@
+.fav-page {
+  padding: 0.5rem 0 4rem;
+}
+
+.lead {
+  color: #5b6b63;
+  margin-bottom: 1.25rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+.empty {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.empty a {
+  color: #2e8b57;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}

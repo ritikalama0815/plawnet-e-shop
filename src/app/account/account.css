@@ -1,0 +1,38 @@
+.page-block {
+  padding: 0.5rem 0 4rem;
+}
+
+.lead {
+  color: #5b6b63;
+}
+
+.account-card {
+  max-width: 420px;
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.account-card label {
+  display: grid;
+  gap: 0.35rem;
+  font-weight: 600;
+}
+
+.account-btn {
+  border: none;
+  background: #14261a;
+  color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.hint {
+  color: #5b6b63;
+  font-size: 0.9rem;
+  margin: 0;
+}

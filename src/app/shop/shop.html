@@ -1,0 +1,99 @@
+<section class="shop">
+  <header class="shop-hero" [class.has-image]="hero()">
+    @if (hero()) {
+      <img [src]="hero()" [alt]="title()" />
+    }
+    <div class="shop-hero-copy">
+      <p class="eyebrow">Shop</p>
+      <h1>{{ title() }}</h1>
+      <p>{{ products().length }} sustainable {{ products().length === 1 ? 'piece' : 'pieces' }}</p>
+    </div>
+  </header>
+
+  @if (!slug()) {
+    <div class="category-pills">
+      <a routerLink="/shop" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }">All</a>
+      @for (category of categories; track category.id) {
+        <a [routerLink]="['/shop', category.slug]" routerLinkActive="on">{{ category.title }}</a>
+      }
+    </div>
+  }
+
+  <div class="shop-layout">
+    <aside class="filters">
+      <div class="filters-head">
+        <h2>Filter</h2>
+        <button type="button" class="text-btn" (click)="clearFilters()">Clear</button>
+      </div>
+
+      @if (availableGenders().length > 1) {
+        <div class="filter-group">
+          <h3>Gender</h3>
+          @for (gender of availableGenders(); track gender) {
+            <label>
+              <input
+                type="checkbox"
+                [checked]="isOn(selectedGenders(), gender)"
+                (change)="toggleGender(gender)"
+              />
+              {{ gender }}
+            </label>
+          }
+        </div>
+      }
+
+      <div class="filter-group">
+        <h3>Color</h3>
+        @for (color of availableColors(); track color) {
+          <label>
+            <input
+              type="checkbox"
+              [checked]="isOn(selectedColors(), color)"
+              (change)="toggleColor(color)"
+            />
+            {{ color }}
+          </label>
+        }
+      </div>
+
+      <div class="filter-group">
+        <h3>Price</h3>
+        @for (bucket of priceBuckets; track bucket.id) {
+          <label>
+            <input
+              type="checkbox"
+              [checked]="isOn(selectedPrices(), bucket.id)"
+              (change)="togglePrice(bucket.id)"
+            />
+            {{ bucket.label }}
+          </label>
+        }
+      </div>
+    </aside>
+
+    <div class="results">
+      <div class="results-bar">
+        <span>{{ products().length }} products</span>
+        <label>
+          Sort
+          <select [value]="sort()" (change)="setSort($any($event.target).value)">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price, low to high</option>
+            <option value="price-desc">Price, high to low</option>
+            <option value="name">Name</option>
+          </select>
+        </label>
+      </div>
+
+      @if (products().length) {
+        <div class="product-grid">
+          @for (product of products(); track product.id) {
+            <app-product-card [product]="product" />
+          }
+        </div>
+      } @else {
+        <p class="empty">No products match these filters. Clear them to see the full collection.</p>
+      }
+    </div>
+  </div>
+</section>

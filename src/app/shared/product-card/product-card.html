@@ -1,0 +1,29 @@
+<article class="product-card">
+  <div class="media">
+    <a [routerLink]="['/product', product.id]">
+      <img [src]="product.image" [alt]="product.name" />
+    </a>
+    @if (product.compareAt) {
+      <span class="sale">Sale</span>
+    }
+    <button
+      type="button"
+      class="fav"
+      [class.on]="favorites.ids().includes(product.id)"
+      (click)="toggleFavorite($event)"
+      [attr.aria-label]="favorites.ids().includes(product.id) ? 'Remove from favorites' : 'Add to favorites'"
+    >
+      <mat-icon>{{ favorites.ids().includes(product.id) ? 'favorite' : 'favorite_border' }}</mat-icon>
+    </button>
+  </div>
+  <div class="body">
+    <a class="name" [routerLink]="['/product', product.id]">{{ product.name }}</a>
+    <p class="price">
+      {{ product.price | currency: 'USD' : 'symbol' }}
+      @if (product.compareAt) {
+        <span class="was">{{ product.compareAt | currency: 'USD' : 'symbol' }}</span>
+      }
+    </p>
+    <button type="button" class="add" (click)="addToCart($event)">Add to cart</button>
+  </div>
+</article>

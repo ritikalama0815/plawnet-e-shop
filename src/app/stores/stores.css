@@ -1,0 +1,27 @@
+.page-block {
+  padding: 0.5rem 0 4rem;
+}
+
+.lead {
+  color: #5b6b63;
+  margin-bottom: 1.5rem;
+}
+
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.store-grid article {
+  background: #fff;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+@media (max-width: 767px) {
+  .store-grid {
+    grid-template-columns: 1fr;
+  }
+}

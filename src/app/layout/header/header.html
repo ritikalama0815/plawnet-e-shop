@@ -1,33 +1,64 @@
-<section class="py-5">
-    <div class="row align-items-center">
-        <div class="col-2 app-icon" routerLink="/">
+<section class="site-header">
+    <div class="row align-items-center header-row">
+        <div class="col-2 app-icon" routerLink="/" (click)="closeCategories()">
             <img src="assets/logo.png" alt="Plawnet" class="app-logo" />
         </div>
         
         <div class="search-bar col-7">
-            <form class="form-inline">
+            <form class="form-inline" (submit)="$event.preventDefault()">
                 <div class="input-group align-items-center">
                      <input type="text" placeholder="search for product, person, or brand" aria-label="search" class="form-control mr-sm-2">
                     <mat-icon class="input-group-append search-icon">search</mat-icon>
                 </div>
-               
             </form>
         </div>
         <div class="header-btn-grp text-end col-3 px-5">
-            <button>
+            <a routerLink="/favorites" class="icon-btn" [attr.aria-label]="'Favorites, ' + favorites.count() + ' saved'">
                 <mat-icon>
-                    <span class="material-symbols-outlined">
-                        volunteer_activism
-                        </span>
+                    <span class="material-symbols-outlined">volunteer_activism</span>
                 </mat-icon>
-            </button>
-            <button>
+                @if (favorites.count()) {
+                    <span class="count">{{ favorites.count() }}</span>
+                }
+            </a>
+            <a routerLink="/cart" class="icon-btn" [attr.aria-label]="'Cart, ' + cart.count() + ' items'">
                 <mat-icon>
-                    <span class="material-symbols-outlined">
-                        add_shopping_cart
-                        </span>
+                    <span class="material-symbols-outlined">add_shopping_cart</span>
                 </mat-icon>
-            </button>
+                @if (cart.count()) {
+                    <span class="count">{{ cart.count() }}</span>
+                }
+            </a>
         </div>
     </div>
+    <nav class="app-navbar mt-3" aria-label="Main">
+        <ul class="nav justify-content-center gap-3">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeCategories()">Home</a>
+            </li>
+            <li class="nav-item categories-item" [class.open]="categoriesOpen">
+                <button type="button" class="nav-link dropdown-toggle" (click)="toggleCategories($event)" [attr.aria-expanded]="categoriesOpen">
+                    Categories
+                </button>
+                @if (categoriesOpen) {
+                    <ul class="dropdown-menu show" (click)="$event.stopPropagation()">
+                        @for (category of categories; track category.id) {
+                            <li>
+                                <a class="dropdown-item" [routerLink]="['/shop', category.slug]" (click)="closeCategories()">{{ category.title }}</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/shop" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeCategories()">Shop</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/stores" routerLinkActive="active" (click)="closeCategories()">Stores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/account" routerLinkActive="active" (click)="closeCategories()">Account</a>
+            </li>
+        </ul>
+    </nav>
 </section>

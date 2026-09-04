@@ -1,0 +1,17 @@
+<section class="fav-page">
+  <h1>Favorites</h1>
+  <p class="lead">{{ favorites.count() }} saved {{ favorites.count() === 1 ? 'item' : 'items' }}</p>
+
+  @if (favorites.products().length) {
+    <div class="product-grid">
+      @for (product of favorites.products(); track product.id) {
+        <app-product-card [product]="product" />
+      }
+    </div>
+  } @else {
+    <div class="empty">
+      <p>No favorites yet. Tap the heart on a product to save it here.</p>
+      <a routerLink="/shop">Browse the shop</a>
+    </div>
+  }
+</section>

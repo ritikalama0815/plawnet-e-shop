@@ -1,0 +1,66 @@
+@if (product(); as item) {
+  <section class="product-page">
+    <nav class="crumbs">
+      <a routerLink="/shop">Shop</a>
+      <span>/</span>
+      <a [routerLink]="['/shop', item.category]">{{ categoryTitle() }}</a>
+      <span>/</span>
+      <span>{{ item.name }}</span>
+    </nav>
+
+    <div class="layout">
+      <div class="photo">
+        <img [src]="item.image" [alt]="item.name" />
+      </div>
+      <div class="details">
+        <p class="eyebrow">{{ categoryTitle() }}</p>
+        <h1>{{ item.name }}</h1>
+        <p class="price">
+          {{ item.price | currency: 'USD' : 'symbol' }}
+          @if (item.compareAt) {
+            <span class="was">{{ item.compareAt | currency: 'USD' : 'symbol' }}</span>
+          }
+        </p>
+        <p class="desc">{{ item.description }}</p>
+
+        <div class="option">
+          <h2>Color</h2>
+          <div class="swatches">
+            @for (option of item.colors; track option) {
+              <button
+                type="button"
+                class="swatch"
+                [class.on]="color() === option"
+                (click)="chooseColor(option)"
+              >
+                {{ option }}
+              </button>
+            }
+          </div>
+        </div>
+
+        <div class="option">
+          <h2>Quantity</h2>
+          <div class="qty">
+            <button type="button" (click)="changeQty(-1)">−</button>
+            <span>{{ qty() }}</span>
+            <button type="button" (click)="changeQty(1)">+</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="add" (click)="addToCart()">Add to cart</button>
+          <button type="button" class="heart" (click)="toggleFavorite()">
+            <mat-icon>{{ favorites.ids().includes(item.id) ? 'favorite' : 'favorite_border' }}</mat-icon>
+            {{ favorites.ids().includes(item.id) ? 'Saved' : 'Save' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+} @else {
+  <section class="product-page">
+    <h1>Product not found</h1>
+    <a routerLink="/shop">Back to shop</a>
+  </section>
+}

@@ -1,0 +1,68 @@
+.category-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+  border: 2px solid #e6ece7;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.category-card:hover {
+  border-color: #2e8b57;
+}
+
+.category-card img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.category-card h2 {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 1rem;
+}
+
+:host ::ng-deep .owl-carousel .owl-stage {
+  display: flex;
+  align-items: stretch;
+}
+
+:host ::ng-deep .owl-carousel .owl-item {
+  display: flex;
+}
+
+:host ::ng-deep .owl-carousel .owl-item > .owl-item-wrapper,
+:host ::ng-deep .owl-carousel .owl-item > * {
+  width: 100%;
+}
+
+.see-all {
+  color: #2e8b57;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 991px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
